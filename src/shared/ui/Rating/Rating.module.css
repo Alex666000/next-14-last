@@ -2,8 +2,21 @@
   margin-right: 5px;
 }
 
-.filled {
+.starWrapper {
+  cursor: pointer;
+}
+
+.filled .star {
   fill: var(--primary);
+}
+
+.editable .star {
+  cursor: pointer;
+  transition: fill 0.3s;
+}
+
+.editable {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=Rating.module.css.map */
