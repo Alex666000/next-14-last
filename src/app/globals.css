@@ -107,6 +107,8 @@ body {
   padding: 0;
 
   font-family: "Noto Sans KR, sans-serif", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
   background-color: var(--main-bg);
   color: var(--black);
 
@@ -130,14 +132,13 @@ body {
   --green: #1dc37e;
   --green-light: #c8f8e4;
   --gray-light: #ebebeb;
-  --font-family: "Noto Sans KR, sans-serif";
 
   /* container */
   /*--container-max-width: 1200px;*/
   /*--container-offset: 10px;*/
 
   /* transition */
-  /*--transition-main: 0.2s ease-in-out;*/
+  --transition-main: all 0.2s ease-in-out;
 
   /* background */
   --main-bg: #f6f6f6;
@@ -172,7 +173,7 @@ body {
   /*--outline-focus-visible: #2f68cc;*/
 
   /* fonts */
-  /*--font-family-main: 'Jost', sans-serif;*/
+  --font-family-main: "Noto Sans", sans-serif;
 
   /* rubber-fonts */
   /*--rubber-font-main-md: calc((100vw - 360px) / (1440 - 360) * (16 - 14) + 14px);*/

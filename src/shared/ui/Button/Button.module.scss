@@ -1,3 +1,4 @@
+// common
 .Button {
   all: unset;
   cursor: pointer;
@@ -5,33 +6,40 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   outline: 2px solid transparent;
+
   padding: 10px;
   text-align: center;
   border: none;
   border-radius: 5px;
   color: var(--white);
-  font: 400 14px/14px var(--font-family-main);
+  font: 400 14px / 14px var(--font-family-main);
   transition: var(--transition-main);
-}
-.Button.fullWidth {
-  width: 100%;
-}
-.Button.disabled {
-  cursor: default;
-  transform: none;
-  opacity: 0.5;
-  box-shadow: none;
-  transition: none;
+
+  &.fullWidth {
+    width: 100%;
+  }
+
+  &.disabled {
+    cursor: default;
+    transform: none;
+    opacity: 0.5;
+    box-shadow: none;
+    transition: none;
+  }
 }
 
+// variants -------------
+// primary
 .primary {
   color: var(--white);
   background-color: var(--primary);
-}
-.primary .down {
-  transform: rotate(90deg);
-  transition: var(--transition-main);
+
+  .down {
+    transform: rotate(90deg);
+    transition: var(--transition-main);
+  }
 }
 
 .primary svg {
@@ -42,14 +50,16 @@
   background-color: var(--primary-hover);
 }
 
+// ghost - без фона с рамкой серой
 .ghost {
   color: var(--black);
   background: none;
   border: 1px solid var(--gray-light);
-}
-.ghost .down {
-  transform: rotate(90deg);
-  transition: var(--transition-main);
+
+  .down {
+    transform: rotate(90deg);
+    transition: var(--transition-main);
+  }
 }
 
 .ghost:hover {
@@ -57,9 +67,11 @@
   background-color: var(--primary);
 }
 
+// при наведении из серой стрелки на белую
 .ghost:hover svg {
   stroke: var(--white);
 }
+
 
 .arrow {
   display: inline-flex;
@@ -70,5 +82,3 @@
   transform: rotate(0deg);
   transition: var(--transition-main);
 }
-
-/*# sourceMappingURL=Button.module.css.map */

@@ -1,51 +1,72 @@
 import {
-  ButtonHTMLAttributes,
-  DetailedHTMLProps,
-  ReactElement,
+  ComponentPropsWithoutRef,
+  ElementType,
   ReactNode,
+  Ref,
+  forwardRef,
 } from "react";
 
-// import ArrowIcon from './ll'
+import { ArrowIcon } from "@/shared/assets/icons";
 import clsx from "clsx";
 
-import styles from "./Button.module.css";
+import s from "./Button.module.scss";
 
-export interface ButtonProps
-  extends DetailedHTMLProps<
-    ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  > {
-  appearance: "ghost" | "primary";
-  // положение стрелки svg иконки
+export type ButtonProps<T extends ElementType = "button"> = {
+  // куда смотрит стрелка svg иконка
   arrow?: "down" | "none" | "right";
-  children: ReactNode;
-  className?: string;
-}
+  as?: T;
+  children?: ReactNode;
+  disabled?: boolean;
+  fullWidth?: boolean;
+  variant?: "ghost" | "primary";
+} & ComponentPropsWithoutRef<T>;
 
-export const Button = ({
-  appearance = "primary",
-  arrow = "none",
-  children,
-  className,
-  ...rest
-}: ButtonProps): ReactElement => {
-  const classes = clsx(
-    styles.button,
-    [className],
-    appearance === "primary" ? styles.primary : "",
-    appearance === "ghost" ? styles.ghost : "",
-  );
+export const Button = forwardRef(
+  <T extends ElementType = "button">(
+    {
+      arrow = "none",
+      as: Component = "button",
+      children,
+      className,
+      disabled = false,
+      fullWidth = false,
+      variant = "primary",
+      ...restProps
+    }: ButtonProps<T>,
+    ref: Ref<Element>,
+  ) => {
+    return (
+      <Component
+        className={clsx(
+          s.Button,
+          {
+            [s.ghost]: variant === "ghost",
+            [s.primary]: variant === "primary",
+          },
+          fullWidth && s.fullWidth,
+          disabled && s.disabled,
+          s[arrow],
 
-  return (
-    <button {...rest} className={classes}>
-      {children}
-      {arrow !== "none" && (
-        <span
-          className={clsx(styles.arrow, arrow === "down" ? styles.down : "")}
-        >
-          {" "}
-        </span>
-      )}
-    </button>
-  );
-};
+          [className],
+        )}
+        disabled={disabled}
+        ref={ref}
+        {...restProps}
+      >
+        {children}
+        {/* когда стрелка направлена вниз */}
+        {arrow !== "none" && (
+          <span>
+            <ArrowIcon
+              className={clsx(s.arrow, {
+                [s.down]: arrow === "down",
+              })}
+            />
+          </span>
+        )}
+      </Component>
+    );
+  },
+);
+
+Button.displayName = "Button";

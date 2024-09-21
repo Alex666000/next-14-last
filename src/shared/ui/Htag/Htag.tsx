@@ -1,4 +1,4 @@
-import styles from "./Htag.module.css";
+import styles from "./Htag.module.scss";
 
 export interface HtagProps {
   tag: "h1" | "h2" | "h3";
