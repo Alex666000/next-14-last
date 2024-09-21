@@ -125,7 +125,7 @@ body {
 :root {
   /* цвета из макета */
   --black: #3b434e;
-  --white: white;
+  --white: #FFF;
   --primary: #7653fc;
   --primary-hover: #6344df;
   --red: #fc836d;

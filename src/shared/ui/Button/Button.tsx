@@ -12,7 +12,7 @@ import clsx from "clsx";
 import s from "./Button.module.scss";
 
 export type ButtonProps<T extends ElementType = "button"> = {
-  // куда смотрит стрелка svg иконка
+  // куда смотрит стрелка: svg иконка
   arrow?: "down" | "none" | "right";
   as?: T;
   children?: ReactNode;
@@ -31,7 +31,7 @@ export const Button = forwardRef(
       disabled = false,
       fullWidth = false,
       variant = "primary",
-      ...restProps
+      ...rest
     }: ButtonProps<T>,
     ref: Ref<Element>,
   ) => {
@@ -52,7 +52,7 @@ export const Button = forwardRef(
         )}
         disabled={disabled}
         ref={ref}
-        {...restProps}
+        {...rest}
       >
         {children}
         {/* когда стрелка направлена вниз */}

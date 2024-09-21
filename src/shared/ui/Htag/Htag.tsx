@@ -1,10 +1,12 @@
+import { ReactElement } from "react";
+
 import styles from "./Htag.module.scss";
 
 export interface HtagProps {
   tag: "h1" | "h2" | "h3";
 }
 
-export const Htag = ({ children, tag }: HtagProps): JSX.Element => {
+export const Htag = ({ children, tag }: HtagProps): ReactElement => {
   switch (tag) {
     case "h1":
       return <h1 className={styles.h1}>{children}</h1>;
