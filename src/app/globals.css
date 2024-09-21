@@ -1,3 +1,125 @@
+/* reset styles */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+input,
+button,
+select,
+textarea,
+optgroup,
+option {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  color: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+input:-webkit-autofill {
+  background-clip: text;
+}
+
+p,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    border: none;
+  }
+}
+
+h1,
+.h1,
+h2,
+.h2 {
+  font-weight: bold;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+
+  font-size: 10px; /* for rem */
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Noto Sans KR, sans-serif", sans-serif;
+  background-color: var(--main-bg);
+  color: var(--black);
+
+  overflow-x: hidden;
+  max-width: 100dvh;
+
+  font-style: normal;
+  min-height: 100%;
+  /* для минимального разрешения экрана что делаем адаптив чтоб белую полосу справа избежать */
+  min-width: 320px;
+}
+
+/* variables */
 :root {
   /* цвета из макета */
   --black: #3b434e;
@@ -8,33 +130,53 @@
   --green: #1dc37e;
   --green-light: #c8f8e4;
   --gray-light: #ebebeb;
-  --font-family: 'Noto Sans KR, sans-serif';
+  --font-family: "Noto Sans KR, sans-serif";
+
+  /* container */
+  /*--container-max-width: 1200px;*/
+  /*--container-offset: 10px;*/
+
+  /* transition */
+  /*--transition-main: 0.2s ease-in-out;*/
+
+  /* background */
+  --main-bg: #f6f6f6;
+  /*---primary-text-bg: #fff;*/
+  /*--outline-bg: #fff;*/
+  /*--secondary-text-bg: #f6f6f6;*/
+  /*--input-bg: #f7f7f7;*/
+
+  /* color text */
+  /*--primary-color-text: #fff;*/
+  /*--secondary-color-text: #444b58;*/
+  /*--tertiary-color-text: #b2b5bb;*/
+
+  /* states */
+  /*--hover-primary-link-color-text: #c4c4c4;*/
+  /*--hover-outline-link-color-text: #444b58;*/
+  /*--hover-btn-bg: #8c2828;*/
+  /*--disabled-btn-bg: #f8afaf;*/
+
+  /* indentation */
+  /*  --grid-gap: 20px; // отсутп по сетке*/
+  /*--main-offset: 20px; // частый отступ в макете проекта*/
+  /*--section-padding-top: 48px; // частый отступ в макете проекта*/
+
+  /* widgets */
+  /*--header-height: 31px;*/
+  /*--footer-height: 90px;*/
+  /*--primary-bg: #484283;*/
+  /*--secondary-bg: #444b58;*/
+
+  /* elements stroke */
+  /*--outline-focus-visible: #2f68cc;*/
+
+  /* fonts */
+  /*--font-family-main: 'Jost', sans-serif;*/
+
+  /* rubber-fonts */
+  /*--rubber-font-main-md: calc((100vw - 360px) / (1440 - 360) * (16 - 14) + 14px);*/
+
+  /* main-fonts */
+  /*--text-main-md: 600 var(--rubber-font-main-md) / 20px var(--font-family-main);*/
 }
-
-html,
-body {
-  overflow-x: hidden;
-
-  max-width: 100vw;
-}
-
-body {
-  color: var(--black);
-  background: #f5f6f8;
-
-  font-family: 'Noto Sans KR, sans-serif';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
