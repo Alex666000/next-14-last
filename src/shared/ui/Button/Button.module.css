@@ -42,7 +42,7 @@
   transition: var(--transition-main);
 }
 .primary svg {
-  stroke: var(--white);
+  fill: var(--white);
 }
 .primary:hover {
   background-color: #5e45d4;
@@ -76,7 +76,7 @@
 }
 
 .ghost:hover svg {
-  stroke: var(--white);
+  fill: var(--white);
 }
 
 .arrow {

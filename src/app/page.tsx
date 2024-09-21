@@ -1,6 +1,7 @@
 import { Button } from "@/shared/ui/Button";
 import { Htag } from "@/shared/ui/Htag";
 import { P } from "@/shared/ui/P";
+import { Rating } from "@/shared/ui/Rating";
 import { Tag } from "@/shared/ui/Tag";
 
 export default () => (
@@ -8,7 +9,7 @@ export default () => (
     <Htag tag={"h1"}>Текст</Htag>
     <Button variant={"primary"}>Кнопка</Button>
     <Button variant={"ghost"}>Кнопка</Button>
-    <Button arrow={"right"} variant={"primary"}>
+    <Button arrow={"down"} variant={"primary"}>
       Кнопка
     </Button>
     <P size={"l"}>Большой</P>
@@ -22,5 +23,7 @@ export default () => (
       Green
     </Tag>
     <Tag color={"primary"}>Green</Tag>
+
+    <Rating rating={4} />
   </>
 );

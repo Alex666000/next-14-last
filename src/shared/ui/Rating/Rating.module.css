@@ -1,0 +1,9 @@
+.Rating {
+  margin-right: 5px;
+}
+
+.filled {
+  fill: var(--primary);
+}
+
+/*# sourceMappingURL=Rating.module.css.map */

@@ -56,7 +56,7 @@
   }
 
   svg {
-    stroke: var(--white);
+    fill: var(--white);
   }
 
   &:hover {
@@ -100,7 +100,7 @@
 
 // при наведении из серой стрелки на белую
 .ghost:hover svg {
-  stroke: var(--white);
+  fill: var(--white);
 }
 
 .arrow {
