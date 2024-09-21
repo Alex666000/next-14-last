@@ -12,7 +12,7 @@
   border-radius: 5px;
   color: var(--white);
   font: 400 14px/14px var(--font-family-main);
-  transition: var(--transition-main);
+  transition: background-color var(--transition-main), box-shadow var(--transition-main), transform var(--transition-main);
 }
 .Button.fullWidth {
   width: 100%;
@@ -24,22 +24,34 @@
   box-shadow: none;
   transition: none;
 }
+.Button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+.Button:focus-visible {
+  outline: 2px solid #7653fc;
+  box-shadow: 0 0 0 2px rgba(118, 83, 252, 0.5);
+}
 
 .primary {
   color: var(--white);
-  background-color: var(--primary);
+  background-color: #7653fc;
 }
 .primary .down {
   transform: rotate(90deg);
   transition: var(--transition-main);
 }
-
 .primary svg {
   stroke: var(--white);
 }
-
 .primary:hover {
-  background-color: var(--primary-hover);
+  background-color: #5e45d4;
+}
+.primary:active {
+  background-color: #4e3cbb;
+}
+.primary:focus-visible {
+  outline: 2px solid #7653fc;
 }
 
 .ghost {
@@ -51,10 +63,16 @@
   transform: rotate(90deg);
   transition: var(--transition-main);
 }
-
 .ghost:hover {
   color: var(--white);
-  background-color: var(--primary);
+  background-color: #7653fc;
+}
+.ghost:active {
+  border-color: #4e3cbb;
+  background-color: #4e3cbb;
+}
+.ghost:focus-visible {
+  outline: 1px solid #7653fc;
 }
 
 .ghost:hover svg {

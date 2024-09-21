@@ -8,14 +8,16 @@
   justify-content: center;
 
   outline: 2px solid transparent;
-
   padding: 10px;
   text-align: center;
   border: none;
   border-radius: 5px;
   color: var(--white);
   font: 400 14px / 14px var(--font-family-main);
-  transition: var(--transition-main);
+  transition:
+    background-color var(--transition-main),
+    box-shadow var(--transition-main),
+    transform var(--transition-main);
 
   &.fullWidth {
     width: 100%;
@@ -28,26 +30,46 @@
     box-shadow: none;
     transition: none;
   }
+
+  // active state for button click effect
+  &:active {
+    transform: translateY(1px); // Эффект вдавливания
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); // Легкая тень при нажатии
+  }
+
+  // focus-visible state
+  &:focus-visible {
+    outline: 2px solid #7653fc; // Ваш цвет для фокуса
+    box-shadow: 0 0 0 2px rgba(118, 83, 252, 0.5); // Подсветка вокруг кнопки
+  }
 }
 
-// variants -------------
+// variants:
 // primary
 .primary {
   color: var(--white);
-  background-color: var(--primary);
+  background-color: #7653fc; // Основной цвет
 
   .down {
     transform: rotate(90deg);
     transition: var(--transition-main);
   }
-}
 
-.primary svg {
-  stroke: var(--white);
-}
+  svg {
+    stroke: var(--white);
+  }
 
-.primary:hover {
-  background-color: var(--primary-hover);
+  &:hover {
+    background-color: #5e45d4; // Более темный оттенок для ховера
+  }
+
+  &:active {
+    background-color: #4e3cbb; // Темно-синий цвет для активного состояния
+  }
+
+  &:focus-visible {
+    outline: 2px solid #7653fc; // Ваш цвет для фокуса
+  }
 }
 
 // ghost - без фона с рамкой серой
@@ -60,18 +82,26 @@
     transform: rotate(90deg);
     transition: var(--transition-main);
   }
-}
 
-.ghost:hover {
-  color: var(--white);
-  background-color: var(--primary);
+  &:hover {
+    color: var(--white);
+    background-color: #7653fc; // Основной цвет
+  }
+
+  &:active {
+    border-color: #4e3cbb; // Темно-синий цвет для активного состояния
+    background-color: #4e3cbb;
+  }
+
+  &:focus-visible {
+    outline: 1px solid #7653fc; // Ваш цвет для фокуса
+  }
 }
 
 // при наведении из серой стрелки на белую
 .ghost:hover svg {
   stroke: var(--white);
 }
-
 
 .arrow {
   display: inline-flex;
