@@ -26,8 +26,8 @@ export const Button = ({
   appearance = "primary",
   arrow = "none",
   children,
-  ...rest,
   className,
+  ...rest
 }: ButtonProps): ReactElement => {
   const classes = clsx(
     styles.button,
