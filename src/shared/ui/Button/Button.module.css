@@ -89,4 +89,27 @@
   transition: var(--transition-main);
 }
 
+.link {
+  color: #7653fc;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.link:hover:not(.disabled) {
+  color: #5e45d4;
+  text-decoration: underline;
+}
+.link:active {
+  color: #4e3cbb;
+}
+.link:focus-visible {
+  outline: 2px solid #7653fc;
+}
+.link.disabled {
+  pointer-events: none;
+  cursor: default;
+  color: #999;
+  text-decoration: none;
+  opacity: 0.5;
+}
+
 /*# sourceMappingURL=Button.module.css.map */

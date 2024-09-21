@@ -112,3 +112,31 @@
   transform: rotate(0deg);
   transition: var(--transition-main);
 }
+
+// link
+.link {
+  color: #7653fc; // Основной цвет ссылки
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover:not(.disabled) {
+    color: #5e45d4; // Более темный оттенок для ховера
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: #4e3cbb; // Темно-синий цвет для активного состояния
+  }
+
+  &:focus-visible {
+    outline: 2px solid #7653fc; // Ваш цвет для фокуса
+  }
+
+  &.disabled {
+    pointer-events: none;
+    cursor: default;
+    color: #999; // Серый цвет для отключенной ссылки
+    text-decoration: none;
+    opacity: 0.5;
+  }
+}
