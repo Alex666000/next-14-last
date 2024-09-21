@@ -1,4 +1,3 @@
-
 ## Getting Started
-Преттиер: npm install --save-dev --save-exact prettier
 
+Преттиер: npm install --save-dev --save-exact prettier

@@ -1,20 +1,15 @@
 module.exports = {
-  root: true,
-  env: { browser: true, es2020: true },
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react-hooks/recommended',
-  ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
-  parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh'],
+  extends: '@it-incubator/eslint-config',
   rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
-    ],
-    '@typescript-eslint/no-unused-vars': 'off',
-    '@typescript-eslint/no-explicit-any': 'off'
+    'react-hooks/rules-of-hooks': 'off',
+    'no-console': 'off',
+    'no-undef': 'off',
+    'import/extensions': 'off',
+    'import/no-unresolved': 'off',
+    'react/button-has-type': 'off',
+    'block-no-empty': 'off',
+    'no-redeclare': 'off',
+    "import/default": "warn",
+    "react/jsx-no-undef": "off",
   },
 }
