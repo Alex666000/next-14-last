@@ -113,7 +113,6 @@ body {
   color: var(--black);
 
   overflow-x: hidden;
-  max-width: 100dvh;
 
   font-style: normal;
   min-height: 100%;

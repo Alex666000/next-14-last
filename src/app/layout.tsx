@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
 
+import { ReactNode } from "react";
+
+import { Footer } from "@/widjets/Footer/Footer";
+import { Header } from "@/widjets/Header/Header";
+import { Sidebar } from "@/widjets/Sidebar/Sidebar";
 import { Open_Sans } from "next/font/google";
 
 import "./globals.css";
+
+import s from "./layout.module.scss";
 
 const inter = Open_Sans({ subsets: ["latin"] });
 
@@ -14,11 +21,19 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang={"ru"}>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className={s.gridWrapper}>
+          <Header className={s.header} />
+          <Sidebar className={s.sidebar} />
+          <div className={s.body}>Body</div>
+          {children}
+          <Footer className={s.footer} />
+        </div>
+      </body>
     </html>
   );
 }
