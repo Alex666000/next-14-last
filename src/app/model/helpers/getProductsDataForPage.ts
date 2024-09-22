@@ -8,7 +8,8 @@ export async function getProductsDataForPage(
   const res = await fetch(API.topPage.byAlias + alias);
 
   if (!res.ok) {
-    throw new Error("Network response was not ok");
+    // throw new Error("Network response was not ok");
+    return null;
   }
 
   return res.json();

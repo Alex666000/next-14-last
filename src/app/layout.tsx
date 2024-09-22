@@ -26,13 +26,15 @@ export default function RootLayout({
   return (
     <html lang={"ru"}>
       <body className={inter.className}>
-        <div className={s.gridWrapper}>
-          <Header className={s.header} />
-          <Sidebar className={s.sidebar} />
-          <div className={s.body}>Body</div>
-          {children}
-          <Footer className={s.footer} />
-        </div>
+        {/*<div className={s.gridWrapper}>*/}
+        {/*  <Header className={s.header} />*/}
+        {/*  <Sidebar className={s.sidebar} />*/}
+        {/*  <div className={s.body}>Body</div>*/}
+        {/*  {children}*/}
+        {/*  <Footer className={s.footer} />*/}
+        {/*</div>*/}
+
+        {children}
       </body>
     </html>
   );

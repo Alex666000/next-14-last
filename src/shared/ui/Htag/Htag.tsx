@@ -1,8 +1,9 @@
-import { ReactElement } from "react";
+import { ReactElement, ReactNode } from "react";
 
 import styles from "./Htag.module.scss";
 
 export interface HtagProps {
+  children: ReactNode;
   tag: "h1" | "h2" | "h3";
 }
 

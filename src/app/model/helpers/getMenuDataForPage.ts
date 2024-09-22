@@ -2,7 +2,9 @@
 import { API } from "@/app/api/api";
 import { MenuItem } from "@/app/model/type/menu";
 
-export async function getMenuData(firstCategory: number): Promise<MenuItem[]> {
+export async function getMenuDataForPage(
+  firstCategory: number,
+): Promise<MenuItem[]> {
   const res = await fetch(API.topPage.find, {
     body: JSON.stringify({
       firstCategory,
