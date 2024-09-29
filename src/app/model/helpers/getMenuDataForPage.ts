@@ -1,6 +1,6 @@
 // Функция для получения меню
-import { API } from "@/app/api/api";
 import { MenuItem } from "@/app/model/type/menu";
+import { API } from "@/shared/api/api";
 
 export async function getMenuDataForPage(
   firstCategory: number,
@@ -17,3 +17,7 @@ export async function getMenuDataForPage(
 
   return res.json();
 }
+
+/*
+fetch - самого Некста
+ */

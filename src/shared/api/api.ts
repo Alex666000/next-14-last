@@ -1,3 +1,4 @@
+// АПИ для всего приложения
 export const API = {
   product: {
     find: process.env.NEXT_PUBLIC_DOMAIN + "/api/product/find",
@@ -6,7 +7,9 @@ export const API = {
     createDemo: process.env.NEXT_PUBLIC_DOMAIN + "/api/review/create-demo",
   },
   topPage: {
-    byAlias: process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/byAlias/",
     find: process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find",
+    id: process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/byAlias/",
   },
 };
+
+// https://courses-top.ru + ..............
