@@ -1,4 +1,5 @@
-import Menu from "@/entyties/memu/Menu";
+import Menu from "@/entyties/ui/Memu/Menu";
+import { Sidebar } from "@/widjets/Sidebar/Sidebar";
 
 // Функция для генерации метаданных
 export async function generateMetadata() {
@@ -14,7 +15,7 @@ export default async function HomePage() {
     <main>
       <span>Главная страница</span>
       {/* делаем запрос на сервер в Menu */}
-      <Menu />
+      <Sidebar />
     </main>
   );
 }

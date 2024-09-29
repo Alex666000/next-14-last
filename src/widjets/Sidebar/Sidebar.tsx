@@ -1,5 +1,6 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactElement } from "react";
 
+import Menu from "@/entyties/ui/Memu/Menu";
 import { clsx } from "clsx";
 
 import s from "./Sidebar.module.scss";
@@ -15,7 +16,7 @@ export const Sidebar = ({
 }: SidebarProps): ReactElement => {
   return (
     <div {...props} className={clsx(s.Sidebar, [className])}>
-      SidebarSidebarSidebarSidebarSidebarSidebarSidebarSidebarSidebarSidebar
+      <Menu />
     </div>
   );
 };
