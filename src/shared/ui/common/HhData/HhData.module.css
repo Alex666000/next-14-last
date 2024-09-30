@@ -1,0 +1,60 @@
+.RootHh {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 20px;
+}
+
+.countBlock {
+  padding: 20px;
+  text-align: center;
+  margin-right: 30px;
+}
+
+.salaryValue {
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 35px;
+  margin-bottom: 10px;
+}
+
+.salaryBlock {
+  padding: 20px;
+  text-align: center;
+}
+
+.salaryBlock > div:not(:last-child) {
+  border-right: 1px solid #dfdfdf;
+}
+
+.rate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filledSvg circle {
+  fill: var(--red);
+}
+
+.title {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 27px;
+  margin-bottom: 10px;
+}
+
+.countValue {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 49px;
+  color: var(--primary);
+}
+
+.rate {
+  display: grid;
+  grid-template-columns: repeat(3, 20px);
+  grid-gap: 10px;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=HhData.module.css.map */

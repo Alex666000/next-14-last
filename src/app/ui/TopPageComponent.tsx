@@ -1,7 +1,9 @@
 import { Fragment } from "react";
 
 import { TopLevelCategory, TopPageModel } from "@/app/model/type/menu";
+import { Card } from "@/shared/ui/Card/Card";
 import { Htag } from "@/shared/ui/Htag";
+import { HhData } from "@/shared/ui/common/HhData/HhData";
 import { clsx } from "clsx";
 
 import s from "./TopPageComponent.module.scss";
@@ -40,8 +42,13 @@ export const TopPageComponent = ({
         <Badge color={"red"} size={"m"}>
           hh.ru
         </Badge>
-        <div className={s.hh}></div>
       </div>
+      <HhData
+        count={1200}
+        juniorSalary={900}
+        middleSalary={1200}
+        seniorSalary={1900}
+      />
     </div>
   );
 };
