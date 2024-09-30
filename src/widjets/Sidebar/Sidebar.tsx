@@ -1,6 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactElement } from "react";
 
 import Menu from "@/entyties/ui/Memu/Menu";
+import LogoIcon from "@/shared/assets/icons/Logo.svg";
 import { clsx } from "clsx";
 
 import s from "./Sidebar.module.scss";
@@ -15,7 +16,9 @@ export const Sidebar = ({
   ...props
 }: SidebarProps): ReactElement => {
   return (
-    <div {...props} className={clsx(s.Sidebar, [className])}>
+    <div className={clsx(s.Sidebar, [className])} {...props}>
+      <LogoIcon className={s.logo} />
+      <div>поиск...</div>
       <Menu />
     </div>
   );

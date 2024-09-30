@@ -22,7 +22,7 @@ import ProductIcon from "../../../shared/assets/icons/Product.svg";
 import ServicesIcon from "../../../shared/assets/icons/Servises.svg";
 
 // Sidebar
-const firstLevelMenu = [
+export const firstLevelMenu = [
   {
     icon: <CoursesIcon />,
     id: TopLevelCategory.Courses,

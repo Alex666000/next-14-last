@@ -1,3 +1,10 @@
+.Sidebar {
+  display: grid;
+  align-content: start;
+}
 
+.logo {
+  margin-top: 34px;
+}
 
 /*# sourceMappingURL=Sidebar.module.css.map */
