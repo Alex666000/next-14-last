@@ -5,6 +5,8 @@ import { API } from "@/shared/api/api";
 export async function getProductsDataForPage(
   id: string,
 ): Promise<TopPageModel | null> {
+  await new Promise((resolve) => () => setTimeout(resolve, 1000));
+
   const res = await fetch(API.topPage.id + id, {
     next: {
       // ревалидировать через 10 сек после того как она сгенерирована: Static + SSG
