@@ -1,7 +1,8 @@
+"use client";
+
 import { ReactNode, createContext, useState } from "react";
 
-import { TopLevelCategory } from "@/app/model/type/menu";
-import { MenuItem } from "@/entyties/model/menu";
+import { MenuItem, TopLevelCategory } from "@/app/model/type/menu";
 
 export interface IAppContext {
   firstCategory: TopLevelCategory;

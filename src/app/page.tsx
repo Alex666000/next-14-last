@@ -13,9 +13,9 @@ export async function generateMetadata() {
 export default async function HomePage() {
   return (
     <main>
-      <span>Главная страница</span>
+      {/*<span>Главная страница</span>*/}
       {/* делаем запрос на сервер в Menu */}
-      <Sidebar />
+      {/*<Sidebar />*/}
     </main>
   );
 }

@@ -10,6 +10,7 @@ export interface MenuItem {
   _id: {
     secondCategory: string;
   };
+  // сами добавили на серверер не было такого флага
   isOpened?: boolean;
   pages: PageItem[];
 }
