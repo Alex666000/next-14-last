@@ -36,6 +36,14 @@
   padding-left: 32px;
   border-left: 1px solid #dfdfdf;
 }
+.secondBlock {
+  display: none;
+}
+
+.secondLevelBlocOpened {
+  display: block;
+}
+
 .secondLevelBlocOpened:last-child {
   margin-bottom: 20px;
 }

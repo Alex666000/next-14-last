@@ -3,10 +3,16 @@
 import { useContext, useEffect } from "react";
 
 import { getMenuDataForPage } from "@/app/model/helpers/getMenuDataForPage";
-import { MenuItem, PageItem, TopLevelCategory } from "@/app/model/type/menu";
+import {
+  FirstLevelMenuItem,
+  MenuItem,
+  PageItem,
+  TopLevelCategory,
+} from "@/app/model/type/menu";
 import { AppContext } from "@/app/providers/context/appContext";
 import clsx from "clsx";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import s from "./Menu.module.scss";
 
@@ -46,6 +52,8 @@ const firstLevelMenu = [
 export default function Menu() {
   const { firstCategory, menu, setMenu } = useContext(AppContext);
 
+  const router = useRouter();
+
   // Запрос данных меню после монтирования компонента
   useEffect(() => {
     const fetchMenuData = async () => {
@@ -57,10 +65,25 @@ export default function Menu() {
     fetchMenuData();
   }, [firstCategory]);
 
+  const openSecondLevel = (secondCategory: string) => {
+    setMenu(
+      setMenu &&
+        menu.map((m) => {
+          if (m._id.secondCategory === secondCategory) {
+            // Если в меню есть элемент с таким именем, то открываем его (на кого кликнули)
+            // открыли по клику и закрыли меню
+            m.isOpened = true;
+          }
+
+          return m;
+        }),
+    );
+  };
+
   const buildFirstLevel = () => {
     return (
       <div>
-        {firstLevelMenu.map((m) => (
+        {firstLevelMenu.map((m: FirstLevelMenuItem) => (
           <div key={m.route}>
             <Link href={`/${m.route}`}>
               <div
@@ -82,18 +105,30 @@ export default function Menu() {
   const buildSecondLevel = (menuItem: MenuItem) => {
     return (
       <div className={s.secondBlock}>
-        {menu.map((m) => (
-          <div key={m._id.secondCategory}>
-            <div>{m._id.secondCategory}</div>
-            <div
-              className={clsx(s.secondLevel, {
-                [s.secondLevelBlocOpened]: m.isOpened,
-              })}
-            >
-              {buildThirdLevel(m.pages, m._id.secondCategory)}
+        {menu.map((m) => {
+          if (
+            m.pages
+              .map((page) => page._id)
+              .includes(router.asPath.split("/")[2])
+          ) {
+            m.isOpened = !m.isOpened;
+          }
+
+          return (
+            <div key={m._id.secondCategory}>
+              <div onClick={() => openSecondLevel(m._id.secondCategory)}>
+                {m._id.secondCategory}
+              </div>
+              <div
+                className={clsx(s.secondLevel, {
+                  [s.secondLevelBlocOpened]: m.isOpened,
+                })}
+              >
+                {buildThirdLevel(m.pages, m._id.secondCategory)}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     );
   };
@@ -102,7 +137,9 @@ export default function Menu() {
     return pages.map((page) => (
       <div key={page._id}>
         <Link
-          className={clsx(s.thirdLevel, { [s.thirdLevel]: true })}
+          className={clsx(s.thirdLevel, {
+            [s.thirdLevel]: `${route}/${page._id}` === router.asPath,
+          })}
           href={`/${route}/${page._id}`}
         >
           {page.category}
