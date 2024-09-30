@@ -1,7 +1,4 @@
-import { Fragment } from "react";
-
 import { TopLevelCategory, TopPageModel } from "@/app/model/type/menu";
-import { Card } from "@/shared/ui/Card/Card";
 import { Htag } from "@/shared/ui/Htag";
 import { HhData } from "@/shared/ui/common/HhData/HhData";
 import { clsx } from "clsx";
