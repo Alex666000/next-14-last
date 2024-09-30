@@ -14,7 +14,7 @@ interface TagProps
   size?: "m" | "s";
 }
 
-export const Tag = ({
+export const Badge = ({
   children,
   className,
   color = "ghost",

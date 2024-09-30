@@ -8,9 +8,9 @@ import { firstLevelMenu } from "@/entyties/ui/Memu/Menu";
 import axios from "axios";
 import { GetStaticPaths } from "next";
 
-interface CourseProps extends Record<string, unknown> {
+interface CourseProps {
   firstCategory: number;
-  menu: CourseProps;
+  menu: MenuItem[];
   page: TopPageModel;
   products: any[];
 }
@@ -35,9 +35,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   for (const m of firstLevelMenu) {
     const { data: menu } = await axios.post<MenuItem[]>(
       process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find",
-      {
-        firstCategory: m.id,
-      },
+      { firstCategory: m.id },
     );
 
     paths = paths.concat(

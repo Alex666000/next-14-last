@@ -1,3 +1,4 @@
+import TopPage from "@/app/products/[type]/page";
 import Menu from "@/entyties/ui/Memu/Menu";
 import { Sidebar } from "@/widjets/Sidebar/Sidebar";
 
@@ -16,6 +17,7 @@ export default async function HomePage() {
       {/*<span>Главная страница</span>*/}
       {/* делаем запрос на сервер в Menu */}
       {/*<Sidebar />*/}
+      <TopPage />
     </main>
   );
 }

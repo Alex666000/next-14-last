@@ -1,3 +1,23 @@
+.wrapper {
+  margin-top: 20px;
+}
 
+.title {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: baseline;
+  justify-items: left;
+  gap: 20px;
+  font: 500 26px/35px var(--font-family-main);
+  color: #3b434e;
+}
+
+.hhTitle {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  justify-items: left;
+  gap: 20px;
+}
 
 /*# sourceMappingURL=TopPageComponent.module.css.map */
