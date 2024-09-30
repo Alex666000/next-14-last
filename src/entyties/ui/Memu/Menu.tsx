@@ -12,7 +12,7 @@ import {
 import { AppContext } from "@/app/providers/context/appContext";
 import clsx from "clsx";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname, useSearchParams } from "next/navigation";
 
 import s from "./Menu.module.scss";
 
@@ -24,25 +24,25 @@ import ServicesIcon from "../../../shared/assets/icons/Servises.svg";
 // Sidebar
 const firstLevelMenu = [
   {
-    icon: <CoursesIcon />, // Вызовите компонент как элемент
+    icon: <CoursesIcon />,
     id: TopLevelCategory.Courses,
     name: "Курсы",
     route: "course",
   },
   {
-    icon: <ServicesIcon />, // Вызовите компонент как элемент
+    icon: <ServicesIcon />,
     id: TopLevelCategory.Services,
     name: "Сервисы",
     route: "/servises",
   },
   {
-    icon: <BooksIcon />, // Вызовите компонент как элемент
+    icon: <BooksIcon />,
     id: "product",
     name: "Книги",
     route: "/books",
   },
   {
-    icon: <ProductIcon />, // Вызовите компонент как элемент
+    icon: <ProductIcon />,
     id: TopLevelCategory.Products,
     name: "Продукты",
     route: "/product",
@@ -52,9 +52,9 @@ const firstLevelMenu = [
 export default function Menu() {
   const { firstCategory, menu, setMenu } = useContext(AppContext);
 
-  const router = useRouter();
+  const pathname = usePathname(); // Получаем текущее значение pathname
+  const searchParams = useSearchParams(); // Получаем параметры поиска, если они есть
 
-  // Запрос данных меню после монтирования компонента
   useEffect(() => {
     const fetchMenuData = async () => {
       const data = await getMenuDataForPage(firstCategory);
@@ -67,16 +67,13 @@ export default function Menu() {
 
   const openSecondLevel = (secondCategory: string) => {
     setMenu(
-      setMenu &&
-        menu.map((m) => {
-          if (m._id.secondCategory === secondCategory) {
-            // Если в меню есть элемент с таким именем, то открываем его (на кого кликнули)
-            // открыли по клику и закрыли меню
-            m.isOpened = true;
-          }
+      menu.map((m) => {
+        if (m._id.secondCategory === secondCategory) {
+          m.isOpened = true;
+        }
 
-          return m;
-        }),
+        return m;
+      }),
     );
   };
 
@@ -107,9 +104,7 @@ export default function Menu() {
       <div className={s.secondBlock}>
         {menu.map((m) => {
           if (
-            m.pages
-              .map((page) => page._id)
-              .includes(router.asPath.split("/")[2])
+            m.pages.map((page) => page._id).includes(pathname.split("/")[2])
           ) {
             m.isOpened = !m.isOpened;
           }
@@ -138,7 +133,7 @@ export default function Menu() {
       <div key={page._id}>
         <Link
           className={clsx(s.thirdLevel, {
-            [s.thirdLevel]: `${route}/${page._id}` === router.asPath,
+            [s.thirdLevel]: `${route}/${page._id}` === pathname,
           })}
           href={`/${route}/${page._id}`}
         >
