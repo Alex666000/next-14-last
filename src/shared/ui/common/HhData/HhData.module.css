@@ -1,13 +1,19 @@
 .RootHh {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr 3fr;
   margin-top: 20px;
+  gap: 20px;
+  padding-inline: 15px;
 }
 
 .countBlock {
   padding: 20px;
   text-align: center;
-  margin-right: 30px;
+}
+
+.salaryBlockWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .salaryValue {
@@ -18,6 +24,7 @@
 }
 
 .salaryBlock {
+  width: 100%;
   padding: 20px;
   text-align: center;
 }
@@ -55,6 +62,27 @@
   grid-template-columns: repeat(3, 20px);
   grid-gap: 10px;
   justify-content: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .RootHh {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 640px) {
+  .salaryBlockWrapper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .salaryBlock > div {
+    border-right: none;
+    border-bottom: 1px solid #dfdfdf;
+    padding-bottom: 20px;
+  }
+  .salaryBlock > div:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
 }
 
 /*# sourceMappingURL=HhData.module.css.map */

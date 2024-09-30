@@ -1,10 +1,7 @@
 .gridWrapper {
   display: grid;
   grid-template-columns: auto 230px minmax(320px, 1200px) auto;
-  grid-template-areas:
-    ". header header ."
-    ". sidebar body ."
-    " footer footer footer footer";
+  grid-template-areas: ". header header ." ". sidebar body ." " footer footer footer footer";
   grid-template-rows: auto 1fr auto;
   gap: 0 30px;
   min-height: 100dvh;
@@ -29,17 +26,16 @@
 
 @media (max-width: 765px) {
   .gridWrapper {
-    grid-template-columns:  minmax(320px, 1fr);
-    grid-template-areas:
-      "header"
-      "body"
-      "footer";
+    grid-template-columns: minmax(320px, 1fr);
+    grid-template-areas: "header" "body" "footer";
     grid-template-rows: auto 1fr auto;
   }
   .sidebar {
-    display: none !important
+    display: none !important;
   }
   .header {
     display: block;
   }
 }
+
+/*# sourceMappingURL=layout.module.css.map */
